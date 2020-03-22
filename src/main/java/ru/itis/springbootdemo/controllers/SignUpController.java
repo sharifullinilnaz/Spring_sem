@@ -1,5 +1,6 @@
 package ru.itis.springbootdemo.controllers;
 
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,13 +14,18 @@ public class SignUpController {
     private SignUpService service;
 
     @GetMapping("/signUp")
-    public String getSignUpPage() {
-        return "sign_up";
+    public String getSignUpPage(Authentication authentication) {
+
+        if(authentication != null) {
+            return "sign_up";
+        } else {
+            return "redirect:/";
+        }
     }
 
     @PostMapping("/signUp")
     public String signUp(SignUpDto form) {
         service.signUp(form);
-        return "redirect:/signUp";
+        return "redirect:/signIn";
     }
 }

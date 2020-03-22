@@ -18,14 +18,24 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private int year;
     private String name;
+    private String surname;
+    private String nickname;
+    private String city;
     private String email;
-    private String password;
+    private String hashPassword;
     private LocalDateTime createdAt;
 
     @Enumerated(value = EnumType.STRING)
     private State state;
 
+    @Enumerated(value = EnumType.STRING)
+    private Role role;
+
     private String confirmCode;
+
+    @OneToOne
+    private Article article;
+
 }

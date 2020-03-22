@@ -17,11 +17,19 @@ public class UserDto {
     private Long id;
     private String name;
     private String email;
+    private String nickname;
+    private String city;
+    private String surname;
+    private int year;
 
     public static UserDto from(User user) {
         return UserDto.builder()
                 .id(user.getId())
                 .name(user.getName())
+                .year(user.getYear())
+                .city(user.getCity())
+                .nickname(user.getNickname())
+                .surname(user.getSurname())
                 .email(user.getEmail())
                 .build();
     }

@@ -24,15 +24,10 @@ public class UsersController {
     }
 
     @GetMapping
-    public String getUsersPage(@CookieValue(value = "AuthCookie", required = false) String cookie,
-                               Model model) {
-        if (usersService.existCookie(cookie)) {
-            List<UserDto> users = usersService.getUsers();
-            model.addAttribute("users", users);
-            return "users_page";
-        } else {
-            return "/signIn";
-        }
+    public String getUsersPage(Model model) {
+        List<UserDto> users = usersService.getUsers();
+        model.addAttribute("users", users);
+        return "users_page";
     }
 
     @GetMapping("/search")
