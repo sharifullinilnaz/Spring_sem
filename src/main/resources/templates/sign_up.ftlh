@@ -19,7 +19,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Year:</label>
-                                    <input type="text" id="year" class="form-control" oninput="validateRegistration()" id="date" name="year" max="2019-3-11">
+                                    <input type="text" id="year" class="form-control" oninput="validateRegistration()" name="year" max="2019-3-11">
                                     <small id="year-valid" class="form-text valid"></small>
                                 </div>
                                 <div class="form-group">

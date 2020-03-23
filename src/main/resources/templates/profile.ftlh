@@ -18,6 +18,17 @@
                         <h3>Nickname: ${user.nickname}</h3>
                         <h3>Name: ${user.name}</h3>
                         <h3>Surname: ${user.surname}</h3>
+
+                        <form>
+                            <button type="submit" class="btn btn-outline-primary" formaction="/editProfile">Edit profile</button>
+                        </form>
+                            <br />
+                            <form>
+                                <button type="submit" class="btn btn-outline-primary" formaction="/addArticle">Add article</button>
+                            </form>
+                        <form>
+                            <a type="submit" class="btn btn-outline-primary" href="/articles?id=${user.id}">Go to articles</a>
+                        </form>
                     </div>
                 </div>
             </div>

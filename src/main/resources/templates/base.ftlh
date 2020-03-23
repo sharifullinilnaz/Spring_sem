@@ -5,12 +5,12 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="/templates/css/mystyle.css" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="/templates/js/jquery-3.4.1.min.js"></script>
-        <script type="text/javascript" src="/templates/js/validate.js" charset="utf-8" lang="en"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <script src="../js/bootstrap.bundle.js"></script>
-        <script type="text/javascript" src="/templates/js/counter.js"></script>
+        <link href="/css/mystyle.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="/js/validate.js" charset="utf-8" lang="en"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/bootstrap.bundle.js"></script>
+        <script type="text/javascript" src="/js/counter.js"></script>
         <title> TKB </title>
     </head>
 
@@ -18,7 +18,7 @@
     <div class="container-fluid top-line-container" >
         <div class="row">
             <div class="col-1">
-                <img src="/templates/photos/logo.png" class="logo">
+                <img src="/photos/logo.png" class="logo">
             </div>
             <div class="col-2 offset-8">
                 <div class="dropdown">

@@ -17,9 +17,9 @@ public class SignUpController {
     public String getSignUpPage(Authentication authentication) {
 
         if(authentication != null) {
-            return "sign_up";
-        } else {
             return "redirect:/";
+        } else {
+            return "sign_up";
         }
     }
 

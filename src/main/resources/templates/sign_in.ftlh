@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/mystyle.css" type="text/css">
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="js/validate.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="/css/mystyle.css" type="text/css">
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/js/validate.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.bundle.js"></script>
     <title> TKB </title>
 </head>
 
@@ -52,7 +52,7 @@
 <div class="container-fluid page-container">
     <div class="row">
         <div class="col-5">
-            <img src="photos/logo.png" id="main-page-image">
+            <img src="/photos/logo.png" id="main-page-image">
         </div>
         <div class="col-6">
             <div class="h1 center">Tourist knowledge box</div>
@@ -66,13 +66,13 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="photos/carousel-1.jpg" class="d-block w-100">
+                        <img src="/photos/carousel-1.jpg" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
-                        <img src="photos/carousel-2.jpg" class="d-block w-100">
+                        <img src="/photos/carousel-2.jpg" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
-                        <img src="photos/carousel-3.jpg" class="d-block w-100">
+                        <img src="/photos/carousel-3.jpg" class="d-block w-100">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
