@@ -14,6 +14,31 @@
         <title> TKB </title>
     </head>
 
+    <script>
+        function sendFile() {
+            let formData = new FormData();
+            let files = ($('#file'))[0]['files'];
+            [].forEach.call(files, function (file, i, files) {
+                formData.append("file", file);
+            });
+
+            $.ajax({
+                type: "POST",
+                url: "/files",
+                data: formData,
+                processData: false,
+                contentType: false
+            })
+                .done(function (response) {
+                    let fileUrl = 'http://localhost/files/' + response;
+                    article.setPhoto(fileUrl)
+                })
+                .fail(function () {
+                    alert('Error')
+                });
+        }
+    </script>
+
     <body>
     <div class="container-fluid top-line-container" >
         <div class="row">
@@ -24,7 +49,7 @@
                 <div class="dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle top-line-btn" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/main">Main</a>
+                        <a class="dropdown-item" href="/articles">Articles</a>
                         <a class="dropdown-item" href="mailto:89172610217ilnaz2000@mail.ru">Write support</a>
                         <a class="dropdown-item" href="/news">News</a>
                     </div>

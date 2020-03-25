@@ -26,6 +26,7 @@ public class User {
     private String email;
     private String hashPassword;
     private LocalDateTime createdAt;
+    private String photo;
 
     @Enumerated(value = EnumType.STRING)
     private State state;
@@ -34,8 +35,5 @@ public class User {
     private Role role;
 
     private String confirmCode;
-
-    @OneToOne
-    private Article article;
 
 }

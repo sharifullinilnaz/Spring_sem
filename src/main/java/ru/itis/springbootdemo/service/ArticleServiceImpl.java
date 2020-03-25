@@ -9,6 +9,7 @@ import ru.itis.springbootdemo.repositories.ArticlesRepository;
 import ru.itis.springbootdemo.repositories.UsersRepository;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class ArticleServiceImpl implements ArticleService{
@@ -20,6 +21,11 @@ public class ArticleServiceImpl implements ArticleService{
     private UsersRepository usersRepository;
 
     @Override
+    public List<Article> getArticles() {
+        return articlesRepository.findAll();
+    }
+
+    @Override
     public void add(ArticleDto form, User user) {
         Article article = Article.builder()
                 .name(form.getName())
@@ -29,7 +35,7 @@ public class ArticleServiceImpl implements ArticleService{
                 .text(form.getText())
                 .build();
         article = articlesRepository.save(article);
-        user.setArticle(article);
+        article.setUser(user);
         usersRepository.save(user);
     }
 }

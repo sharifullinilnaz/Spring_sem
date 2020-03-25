@@ -7,8 +7,8 @@
             <div class="col-6 offset-3">
                 <div class="center round-border row">
                     <div class="col-6">
-                        <#if user.photoPath??>
-                            <img src="${user.photoPath!}" class="photo">
+                        <#if user.photo??>
+                            <img src="${user.getPhoto()}" class="photo">
                         </#if>
                     </div>
                     <div class="col info">

@@ -20,15 +20,14 @@
                                         <label>City:</label>
                                         <input type="text" name="city" class="form-control" placeholder="City">
                                     </div>
-                                    <div class="form-group">
-                                        <label>Email:</label>
-                                        <input type="email" name="email" class="form-control" placeholder="Your email">
-                                    </div>
+<#--                                    <div class="form-group">-->
+<#--                                        <label>Email:</label>-->
+<#--                                        <input type="email" name="email" class="form-control" placeholder="Your email">-->
+<#--                                    </div>-->
                                     <div class="form-group">
                                         <label>Nickname:</label>
                                         <input type="text" name="nickname" class="form-control" placeholder="Nickname">
                                     </div>
-                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                                     <div class="center">
                                         <button type="submit" class="btn btn-outline-primary" value="save">Save</button>
                                     </div>

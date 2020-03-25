@@ -37,7 +37,6 @@
                             <label>Password:</label>
                             <input type="password"  id="password"  class="form-control" name="password" placeholder="Password">
                         </div>
-                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                         <button type="submit" id="submit" value="save" class="btn btn-outline-primary">Enter</button>
 
                     </form>

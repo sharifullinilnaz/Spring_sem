@@ -49,11 +49,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Photo :</label>
-                                    <input type="file" name="photo" oninput="validateRegistration()"  class="form-control" placeholder="Photo">
+                                    <input type="file" id="file" name="file" oninput="validateRegistration()"  class="form-control" placeholder="Photo">
+                                    <input onclick="sendFile()" type="button"  disabled="true" class="btn btn-outline-primary" value="Ok">
                                 </div>
-                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                                 <div class="center">
-                                    <button type="submit" id="submit" disabled="true" class="btn btn-outline-primary" value="save">Register</button>
+                                    <button onclick="sendFile()" type="submit" id="submit" disabled="true" class="btn btn-outline-primary" value="save">Register</button>
                                 </div>
                             </form>
                         </div>
