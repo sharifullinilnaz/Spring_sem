@@ -31,7 +31,6 @@
             })
                 .done(function (response) {
                     let fileUrl = 'http://localhost/files/' + response;
-                    article.setPhoto(fileUrl)
                 })
                 .fail(function () {
                     alert('Error')

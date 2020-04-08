@@ -26,11 +26,11 @@ public class ArticleServiceImpl implements ArticleService{
     }
 
     @Override
-    public void add(ArticleDto form, User user) {
+    public void add(ArticleDto form, User user, String photoUrl) {
         Article article = Article.builder()
                 .name(form.getName())
                 .geolocation(form.getGeolocation())
-                .photoPath(form.getPhotoPath())
+                .photoPath(photoUrl)
                 .date(LocalDateTime.now())
                 .text(form.getText())
                 .build();

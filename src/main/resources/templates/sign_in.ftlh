@@ -12,32 +12,33 @@
 </head>
 
 <body>
+<#import "spring.ftl" as spring />
 <div class="container-fluid top-line-container">
     <div class="row">
         <div class="col-1 offset-8">
             <form method="GET" action="/signUp">
-                <button type="submit" class="btn btn-primary top-line-btn">Registration</button>
+                <button type="submit" class="btn btn-primary top-line-btn"><@spring.message 'signIn.page.registration.button'/></button>
             </form>
         </div>
         <div class="col-1 ">
             <form method="GET" action="/main">
-                <button type="submit" class="btn btn-primary top-line-btn">Main</button>
+                <button type="submit" class="btn btn-primary top-line-btn"><@spring.message 'signIn.page.main.button'/></button>
             </form>
         </div>
         <div class="col-2">
             <div class="dropdown">
-                <button type="button" class="btn btn-primary dropdown-toggle top-line-btn" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Enter</button>
+                <button type="button" class="btn btn-primary dropdown-toggle top-line-btn" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><@spring.message 'signIn.page.enter.button'/></button>
                 <div class="dropdown-menu">
                     <form method="post" action="" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>Email:</label>
-                            <input type="text"  id="login" class="form-control" name="email" placeholder="Enter email">
+                            <input type="text"  id="login" class="form-control" name="email" placeholder="<@spring.message 'signIn.page.enter.email'/>">
                         </div>
                         <div class="form-group">
-                            <label>Password:</label>
-                            <input type="password"  id="password"  class="form-control" name="password" placeholder="Password">
+                            <label><@spring.message 'signIn.page.password'/>:</label>
+                            <input type="password"  id="password"  class="form-control" name="password" placeholder="<@spring.message 'signIn.page.password'/>">
                         </div>
-                        <button type="submit" id="submit" value="save" class="btn btn-outline-primary">Enter</button>
+                        <button type="submit" id="submit" value="save" class="btn btn-outline-primary"><@spring.message 'signIn.page.enter.button'/></button>
 
                     </form>
                 </div>
@@ -45,9 +46,7 @@
         </div>
     </div>
 </div>
-<#if error??>
-    <h1>Ошибка</h1>
-</#if>
+
 <div class="container-fluid page-container">
     <div class="row">
         <div class="col-5">
@@ -55,7 +54,7 @@
         </div>
         <div class="col-6">
             <div class="h1 center">Tourist knowledge box</div>
-            <div class="text-div">A site for those who like to travel or just want to learn more about the countries of the world. Users can write articles about the corners of the world that they were lucky to visit, about the characteristics of the culture of indigenous peoples, about flora and fauna. Those who do not want to write their articles can leave comments under strangers, argue with other users about where the mountains are higher and the seas are deeper.</div>
+            <div class="text-div"><@spring.message 'signIn.page.description'/>A site for those who like to travel or just want to learn more about the countries of the world. Users can write articles about the corners of the world that they were lucky to visit, about the characteristics of the culture of indigenous peoples, about flora and fauna. Those who do not want to write their articles can leave comments under strangers, argue with other users about where the mountains are higher and the seas are deeper.</div>
             <br/>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">

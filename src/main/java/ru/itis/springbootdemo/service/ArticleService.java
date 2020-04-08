@@ -7,6 +7,6 @@ import ru.itis.springbootdemo.models.User;
 import java.util.List;
 
 public interface ArticleService {
-    void add(ArticleDto form, User user);
+    void add(ArticleDto form, User user, String photoUrl);
     List<Article> getArticles();
 }
