@@ -54,7 +54,7 @@
         </div>
         <div class="col-6">
             <div class="h1 center">Tourist knowledge box</div>
-            <div class="text-div"><@spring.message 'signIn.page.description'/>A site for those who like to travel or just want to learn more about the countries of the world. Users can write articles about the corners of the world that they were lucky to visit, about the characteristics of the culture of indigenous peoples, about flora and fauna. Those who do not want to write their articles can leave comments under strangers, argue with other users about where the mountains are higher and the seas are deeper.</div>
+            <div class="text-div"><@spring.message 'signIn.page.description'/></div>
             <br/>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">

@@ -21,6 +21,9 @@ public class UserDto {
     private String city;
     private String surname;
     private int year;
+    private String role;
+    private String state;
+
 
     public static UserDto from(User user) {
         return UserDto.builder()
@@ -31,6 +34,8 @@ public class UserDto {
                 .nickname(user.getNickname())
                 .surname(user.getSurname())
                 .email(user.getEmail())
+                .role(user.getRole().name())
+                .state(user.getState().name())
                 .build();
     }
 

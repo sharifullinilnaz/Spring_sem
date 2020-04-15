@@ -57,5 +57,9 @@ public class UserDetailsImpl implements UserDetails {
     public boolean isEnabled() {
         return user.getState().equals(State.CONFIRMED);
     }
+
+    public String getConfirmCode() {
+        return user.getConfirmCode();
+    }
 }
 

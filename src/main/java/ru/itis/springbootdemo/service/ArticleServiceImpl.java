@@ -10,6 +10,7 @@ import ru.itis.springbootdemo.repositories.UsersRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ArticleServiceImpl implements ArticleService{
@@ -37,5 +38,11 @@ public class ArticleServiceImpl implements ArticleService{
         article = articlesRepository.save(article);
         article.setUser(user);
         usersRepository.save(user);
+    }
+
+    @Override
+    public Article getConcreteArticle(Long id) {
+        Optional<Article> articleOptional = articlesRepository.findById(id);
+        return articleOptional.orElse(null);
     }
 }
