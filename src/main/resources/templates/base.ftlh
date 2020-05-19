@@ -14,7 +14,11 @@
 
         <title> TKB </title>
     </head>
-
+    <style>
+        .error {
+            color: #ff0000;
+        }
+    </style>
     <script>
         function sendFile() {
             let formData = new FormData();
@@ -38,7 +42,7 @@
                 });
         }
     </script>
-
+    <#import "spring.ftl" as spring />
     <body>
     <div class="container-fluid top-line-container" >
         <div class="row">
@@ -51,7 +55,16 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/articles">Articles</a>
                         <a class="dropdown-item" href="mailto:89172610217ilnaz2000@mail.ru">Write support</a>
-                        <a class="dropdown-item" href="/news">News</a>
+                        <#if user??><a class="dropdown-item" href="/profile/${user.id}">Profile</a>
+                            <a class="dropdown-item" href="/news">News</a>
+                            <a class="dropdown-item" href="/articles/${user.id}">My articles</a>
+                            <#if user.getRole() == "ADMIN">
+                                <a class="dropdown-item" href="/addNews"> Add news </a>
+                            </#if>
+                            <a class="dropdown-item" href="/logout">Exit</a>
+                        <#else>
+                            <a class="dropdown-item" href="/signUp">Registration</a>
+                            <a class="dropdown-item" href="/signIn">Login</a></#if>
                     </div>
                 </div>
             </div>

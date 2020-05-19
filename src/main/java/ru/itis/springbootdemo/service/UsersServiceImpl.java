@@ -32,4 +32,8 @@ public class UsersServiceImpl implements UsersService {
         return from(usersRepository.findAllByNameContainsIgnoreCase(name));
     }
 
+    @Override
+    public void deleteUser(Long userId) {
+        usersRepository.deleteById(userId);
+    }
 }

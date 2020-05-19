@@ -10,4 +10,6 @@ public interface ArticleService {
     void add(ArticleDto form, User user, String photoUrl);
     List<Article> getArticles();
     Article getConcreteArticle(Long id);
+    List<Article> getAllAuthorArticles(Long authorId);
+    void deleteArticle(Long articleId);
 }

@@ -27,6 +27,29 @@ function validateRegistration() {
 
 }
 
+function validateEditProfile() {
+
+
+    var firstName = $('#first-name');
+    var secondName = $('#second-name');
+    var email = $('#email');
+    var nick = $('#nick');
+    var city = $('#city');
+    var firstNameValid = $('#first-name-valid');
+    var secondNameValid = $('#second-name-valid');
+    var emailValid = $('#email-valid');
+    var nickValid = $('#nick-valid');
+    var cityValid = $('#city-valid');
+    var submit = $('#submit');
+
+    if (validationOfName(firstName, firstNameValid) && validationOfName(secondName, secondNameValid) && validationCity(city, cityValid) &&  validationOfEmail(email, emailValid) && validationNick(nick, nickValid) ) {
+        submit.attr('disabled', false);
+    } else {
+        submit.attr('disabled', true);
+    }
+
+}
+
 function validationOfEmail(login, validEmail) {
     var pattern = /^[A-Za-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6}$/;
     if (login.val().length < 1) {

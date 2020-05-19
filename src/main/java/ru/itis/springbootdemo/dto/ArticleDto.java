@@ -21,6 +21,7 @@ public class ArticleDto {
     private String photoPath;
     private LocalDateTime date;
     private String text;
+    private Long userId;
 
     public static ArticleDto from(Article article) {
         return ArticleDto.builder()
@@ -30,6 +31,7 @@ public class ArticleDto {
                 .photoPath(article.getPhotoPath())
                 .date(article.getDate())
                 .text(article.getText())
+                .userId(article.getUser().getId())
                 .build();
     }
 

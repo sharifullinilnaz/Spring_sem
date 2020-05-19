@@ -1,13 +1,14 @@
 package ru.itis.springbootdemo.controllers;
 
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import ru.itis.springbootdemo.dto.SignUpDto;
+import ru.itis.springbootdemo.security.UserDetailsImpl;
 import ru.itis.springbootdemo.service.FileStorageService;
 import ru.itis.springbootdemo.service.SignUpService;
 
@@ -21,7 +22,6 @@ public class SignUpController {
 
     @GetMapping("/signUp")
     public String getSignUpPage(Authentication authentication) {
-
         if(authentication != null) {
             return "redirect:/";
         } else {

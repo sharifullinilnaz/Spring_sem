@@ -6,12 +6,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.itis.springbootdemo.dto.ArticleDto;
-import ru.itis.springbootdemo.dto.UserDto;
+import ru.itis.springbootdemo.dto.CommentDto;
 import ru.itis.springbootdemo.models.Article;
+import ru.itis.springbootdemo.models.Comment;
 import ru.itis.springbootdemo.models.User;
 import ru.itis.springbootdemo.security.UserDetailsImpl;
 import ru.itis.springbootdemo.service.ArticleService;
-import ru.itis.springbootdemo.service.UsersService;
+import ru.itis.springbootdemo.service.CommentService;
 
 import java.util.List;
 
@@ -20,8 +21,12 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
-    @GetMapping("/article/{id}")
-    public String getConcreteArticlePage(@PathVariable("id") Long articleId,
+    @Autowired
+    private CommentService commentService;
+
+
+    @GetMapping("/article/{article_id}")
+    public String getConcreteArticlePage(@PathVariable("article_id") Long articleId,
                                           Model model,
                                           Authentication authentication) {
         User user = null;
@@ -30,10 +35,20 @@ public class ArticleController {
             user = userDetails.getUser();
         }
         Article article = articleService.getConcreteArticle(articleId);
+        List<Comment> comments= commentService.getAllCommentsToArticle(articleId);
         model.addAttribute("article", article);
         model.addAttribute("user", user);
+        model.addAttribute("comments", comments);
 
         return "article";
+    }
+
+    @PostMapping("/article/{article_id}")
+    public String addComment(CommentDto form, Authentication authentication,@PathVariable("article_id") Long articleId) {
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+        Article article = articleService.getConcreteArticle(articleId);
+        commentService.add(form,userDetails.getUser(),article);
+        return "redirect:/article/" + article.getId();
     }
 
 }

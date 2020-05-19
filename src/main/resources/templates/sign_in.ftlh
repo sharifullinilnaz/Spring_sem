@@ -21,7 +21,7 @@
             </form>
         </div>
         <div class="col-1 ">
-            <form method="GET" action="/main">
+            <form method="GET" action="/articles">
                 <button type="submit" class="btn btn-primary top-line-btn"><@spring.message 'signIn.page.main.button'/></button>
             </form>
         </div>
@@ -31,6 +31,7 @@
                 <div class="dropdown-menu">
                     <form method="post" action="" enctype="multipart/form-data">
                         <div class="form-group">
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                             <label>Email:</label>
                             <input type="text"  id="login" class="form-control" name="email" placeholder="<@spring.message 'signIn.page.enter.email'/>">
                         </div>
@@ -38,8 +39,10 @@
                             <label><@spring.message 'signIn.page.password'/>:</label>
                             <input type="password"  id="password"  class="form-control" name="password" placeholder="<@spring.message 'signIn.page.password'/>">
                         </div>
+                        <label>
+                            <input type="checkbox" name="remember-me" checked><@spring.message 'signIn.page.remember.me'/>
+                        </label>
                         <button type="submit" id="submit" value="save" class="btn btn-outline-primary"><@spring.message 'signIn.page.enter.button'/></button>
-
                     </form>
                 </div>
             </div>

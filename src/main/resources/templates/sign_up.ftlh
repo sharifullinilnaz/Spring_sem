@@ -52,6 +52,7 @@
                                     <input type="file" id="file" name="file" oninput="validateRegistration()"  class="form-control" placeholder="Photo">
                                     <input onclick="sendFile()" type="hidden"  disabled="true" class="btn btn-outline-primary" value="Ok">
                                 </div>
+                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                                 <div class="center">
                                     <button onclick="sendFile()" type="submit" id="submit" disabled="true" class="btn btn-outline-primary" value="save">Register</button>
                                 </div>

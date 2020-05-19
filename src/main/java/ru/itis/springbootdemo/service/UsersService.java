@@ -11,4 +11,5 @@ public interface UsersService {
 
     List<UserDto> search(String name);
 
+    void deleteUser(Long userId);
 }

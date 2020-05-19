@@ -35,14 +35,24 @@ public class ArticleServiceImpl implements ArticleService{
                 .date(LocalDateTime.now())
                 .text(form.getText())
                 .build();
-        article = articlesRepository.save(article);
+        articlesRepository.save(article);
         article.setUser(user);
         usersRepository.save(user);
     }
 
     @Override
     public Article getConcreteArticle(Long id) {
-        Optional<Article> articleOptional = articlesRepository.findById(id);
-        return articleOptional.orElse(null);
+        return articlesRepository.getOne(id);
     }
+
+    @Override
+    public List<Article> getAllAuthorArticles(Long authorId) {
+        return articlesRepository.findByUserId(authorId);
+    }
+
+    @Override
+    public void deleteArticle(Long articleId) {
+        articlesRepository.deleteById(articleId);
+    }
+
 }

@@ -23,6 +23,7 @@ public class UserDto {
     private int year;
     private String role;
     private String state;
+    private String photo;
 
 
     public static UserDto from(User user) {
@@ -36,6 +37,7 @@ public class UserDto {
                 .email(user.getEmail())
                 .role(user.getRole().name())
                 .state(user.getState().name())
+                .photo(user.getPhoto())
                 .build();
     }
 
