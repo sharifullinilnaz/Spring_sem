@@ -18,7 +18,7 @@ public interface UsersRepository extends JpaRepository<User, Long> {
     List<User> findAllByNameContainsIgnoreCase(String name);
 
     @Query("from User user where " +
-            "upper(user.email) like concat('%', upper(:query), '%') or " +
+            "upper(user.nickname) like concat('%', upper(:query), '%') or " +
             "upper(user.name) like concat('%', upper(:query), '%')")
     Page<User> search(@Param("query") String query,Pageable pageable);
 
