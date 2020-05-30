@@ -1,35 +1,44 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="application/javascript" src="/js/jquery-3.4.1.min.js"></script>
-    <title>Document</title>
-</head>
-<body>
-<script type="application/javascript">
+<#include "baseSearch.ftlh" />
+
+<#macro content>
+<script type="application/javascript" xmlns="http://www.w3.org/1999/html">
     function f() {
+        if ($("#query").val().length === 11) {
+            $("#result").html("");
+            $("#result").append("We send you sms");
+        } else {
+            $("#result").html("Enter a valid phone number");
+        }
         $.ajax({
             url: "/sms/send",
             data: {"phone": $("#query").val()},
 
             success: function (data) {
-                if (data.phone.length === 11) {
-                    $("#result").html("");
-                    $("#result").append("We send you sms");
-                } else {
-                    $("#result").html("Enter a valid phone number");
-                }
+
             }
         })
     }
 </script>
-<input type="text" id="query" name="query">
-<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-<input type="button" value="send" onclick="f()">
-<h2 id="result"></h2>
+<div class="container-fluid page-container">
+    <div class="row">
+        <div class="col-11">
+            <h1 class="center">Узнать роль своей записи через номер телефона</h1>
+            </br>
+            </br>
+            <div class="col-5 offset-4">
+                <div class="form-group">
+                    <input class="form-control" type="text" id="query" name="query">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+                    </br>
+                    <button class="btn btn-outline-primary" value="send" onclick="f()">Отправить</button>
+                    <h2 id="result"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-</body>
-</html>
+
+</#macro>
+
+<@display_page />

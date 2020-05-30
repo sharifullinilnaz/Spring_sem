@@ -2,9 +2,7 @@ package ru.itis.springbootdemo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.itis.springbootdemo.dto.ArticleDto;
 import ru.itis.springbootdemo.dto.CommentDto;
-import ru.itis.springbootdemo.dto.UserDto;
 import ru.itis.springbootdemo.models.Article;
 import ru.itis.springbootdemo.models.Comment;
 import ru.itis.springbootdemo.models.User;
@@ -14,7 +12,6 @@ import ru.itis.springbootdemo.repositories.UsersRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CommentServiceImpl implements CommentService{
@@ -43,7 +40,17 @@ public class CommentServiceImpl implements CommentService{
     }
 
     @Override
+    public void delete(Long id) {
+        commentsRepository.deleteById(id);
+    }
+
+    @Override
     public List<Comment> getAllCommentsToArticle(Long articleId) {
         return commentsRepository.findByArticleId(articleId);
+    }
+
+    @Override
+    public Comment getById(Long id) {
+        return commentsRepository.getOne(id);
     }
 }

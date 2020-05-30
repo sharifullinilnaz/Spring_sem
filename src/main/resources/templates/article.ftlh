@@ -40,6 +40,11 @@
                                         <div class="right-text">
                                             <h6>${c.date}</h6>
                                         </div>
+                                        <#if user.id==c.getUser().id>
+                                        <div class="right-text">
+                                            <a href="/comment/${article.getId()}/delete/${c.getId()}">Delete</a>
+                                        </div>
+                                        </#if>
                                 </div>
                             </div>
                         </#list>

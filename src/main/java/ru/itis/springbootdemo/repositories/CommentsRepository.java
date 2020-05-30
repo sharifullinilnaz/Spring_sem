@@ -1,6 +1,7 @@
 package ru.itis.springbootdemo.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import ru.itis.springbootdemo.models.Comment;
 
@@ -13,4 +14,7 @@ public interface CommentsRepository extends JpaRepository<Comment, Long> {
             nativeQuery = true)
     List<Comment> findByArticleId(Long articleId);
     List<Comment> findByUserId(Long authorId);
+    @Modifying
+    @Query(value = "DELETE FROM comments WHERE id = :id ;", nativeQuery = true)
+    void deleteById(Long id);
 }

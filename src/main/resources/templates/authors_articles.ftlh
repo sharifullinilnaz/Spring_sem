@@ -6,7 +6,6 @@
     <div class="container-fluid page-container">
     <div class="row">
         <div class="col-11">
-            <#--            <h1 class="center"> ${author.nickname} articles</h1>-->
             </br>
             </br>
             <div class="col-8 offset-2 articles">
@@ -28,6 +27,9 @@
 
                                 <div class="offset-10">
                                     <a type="submit"  href="/article/${a.id}" class="btn btn-primary top-line-btn to-main-btn">Read</a>
+                                </div>
+                                <div class="offset-10">
+                                    <a type="submit"  href="/delete/article/${a.id}" class="btn btn-primary top-line-btn to-main-btn">Delete</a>
                                 </div>
                             </div>
                         </div>

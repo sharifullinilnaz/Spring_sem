@@ -27,6 +27,9 @@
                         <form>
                                 <button type="submit" class="btn btn-outline-primary" formaction="/addArticle"><@spring.message 'profile.page.add.article'/></button>
                         </form>
+                            <form>
+                                <button type="submit" class="btn btn-outline-primary" formaction="/sms"><@spring.message 'profile.page.get.role'/></button>
+                            </form>
                         </#if>
                         <form>
                             <a type="submit" class="btn btn-outline-primary" href="/articles/${profile_user.id}"><@spring.message 'profile.page.go.to.articles'/></a>

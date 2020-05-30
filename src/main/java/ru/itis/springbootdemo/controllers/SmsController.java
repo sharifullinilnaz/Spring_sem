@@ -29,7 +29,7 @@ public class SmsController {
         HttpHeaders headers = new HttpHeaders();
         headers.setBasicAuth("89172610217ilnaz2000@mail.ru", "2ucysqqeD9U1tJwpq2rqHZGWUKCv");
         String resourceUrl =
-                "https://@gate.smsaero.ru/v2/sms/send?number=" + phone + "&text=" + userDetails.getConfirmCode() + "&sign=SMS Aero&channel=DIRECT";
+                "https://@gate.smsaero.ru/v2/sms/send?number=" + phone + "&text=" + userDetails.getUser().getRole() + "&sign=SMS Aero&channel=DIRECT";
         HttpEntity<String> entity = new HttpEntity<>(headers);
         ResponseEntity<String> response = restTemplate.exchange(resourceUrl, HttpMethod.GET, entity, String.class);
         System.out.println(response.getBody());

@@ -9,5 +9,7 @@ import java.util.List;
 
 public interface CommentService {
     void add(CommentDto form, User user, Article article);
+    void delete(Long id);
     List<Comment> getAllCommentsToArticle(Long articleId);
+    Comment getById(Long id);
 }
